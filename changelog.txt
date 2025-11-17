@@ -1,17 +1,12 @@
-= 1.4.1 =
-* Added support for MemberPress Courses
-* Updated stylesheet to CSS3
+= 1.4.2 =
+* Fixed Warning about there being no array index 1 for file type.
 
 = 1.4.0 =
-* forked from MediaList plugin
-* Built-in multiple styles removed (you should do those in your theme)
-* Switched from Swift icons to Dashicons
-* Checks for "Media Library Categories" plugin by Jeffry-WP so "Categories" doesn't get added to Media Library menu twice
-* Added support for custom taxonomies and terms (which adds support for MemberPress Downloads and The Events Calendar and many other custom post types with custom taxonomies)
-* Added pre-defined list filters
-* Added ability to show all categories/terms assigned to item
-* Added support for DMG files
-* Fixed pagination where it would only do 10 items or all items.
+* Modified version to support custom taxonomies
+* Media Library Categories plugin support
+* MemberPress Downloads plugin support
+* Added Silk Icons for Post, Page, Event post types
+* Updated styles.css for new icons
 
 = 1.3.9 =
 * Support for displaying lists using tags added.

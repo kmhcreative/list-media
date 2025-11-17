@@ -2,9 +2,9 @@
 Contributors: mauvedev, kmhcreative
 Tags: attachments, post list, file list, document list, media list, memberpress downloads
 Requires at least: 4.2
-Tested up to: 5.8
+Tested up to: 6.8.3
 Requires PHP: 5.4
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -170,6 +170,8 @@ The lists will initially load once on page-load, when the shortcode is changed y
 Make sure that the attachment you have uploaded into the **Media Library** has been attached to the page the shortcode has been placed on. In the case of Posts, check you have assigned a category and your shortcode syntax is correct.
 
 == Changelog ==
+= 1.4.2 =
+* Fixed warning if no array index 1 for file type.
 = 1.4.1 =
 * Added support for MemberPress Courses
 * Updated stylesheet to CSS3

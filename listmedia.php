@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 * Plugin Name: List Media
 * Plugin URI: https://en-gb.wordpress.org/plugins/media-list/
 * Description: Adds the ability to quickly list posts or media attached to a page with pagination via [listmedia] shortcode.
-* Version: 1.4.1
+* Version: 1.4.2
 * Author: D. Relton, K.M. Hansen
 * Author URI: https://profiles.wordpress.org/mauvedev/
 * License: GPLv2 or later
@@ -319,31 +319,35 @@ function listmediaumbrellamimetype($listmediaquery) {
 		} else {	
 			// no mimetype so see if we can get it from the permalink
 			preg_match('/.*\.(pdf|xls|doc|docx|ppt|zip|txt|mp3|wav|wma|mid|jpg|jpeg|gif|png|bmp|tif|tiff|ico|sql|xml|exe)/i', get_permalink(), $matches);
-			switch ($matches[1]){
-				case "docx":
-					$type = "doc";
-					break;
-				case "jpeg":
-					$type = "jpg";
-					break;
-				case "tif":
-					$type = "tiff";
-					break;
-				case "txt":
-					$type = "text";
-					break;
-				case "ico":
-					$type = "icon";
-					break;
-				case "":
-					// permalink had no file extension in it so...
-					$type = "Posted";
-					break;
-				default:
-					// otherwise return what match found...
-					$type = $matches[1];
-					break;
-			};
+			if (count($matches) > 0){
+				switch ($matches[1]){
+					case "docx":
+						$type = "doc";
+						break;
+					case "jpeg":
+						$type = "jpg";
+						break;
+					case "tif":
+						$type = "tiff";
+						break;
+					case "txt":
+						$type = "text";
+						break;
+					case "ico":
+						$type = "icon";
+						break;
+					case "":
+						// permalink had no file extension in it so...
+						$type = "Posted";
+						break;
+					default:
+						// otherwise return what match found...
+						$type = $matches[1];
+						break;
+				};
+			} else {
+				$type = "Posted";
+			}
 		  return $type;
 		}	 
 }
